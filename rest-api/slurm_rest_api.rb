@@ -44,7 +44,7 @@ ruby_block 'Add JWT configuration to slurmdbd.conf' do
     file.insert_line_after_match(/AuthType=*/, "AuthAltTypes=auth/jwt")
     file.write_file
   end
-  not_if "grep -q auth/jwt #{slurm_etc}/slurmdbd.conf"
+  not_if "test ! -f #{slurm_etc}/slurmdbd.conf || grep -q auth/jwt #{slurm_etc}/slurmdbd.conf"
 end
 
 service 'slurmctld' do
