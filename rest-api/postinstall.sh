@@ -7,7 +7,7 @@ set -e
 tmp_dir=/tmp/slurm_rest_api
 mkdir -p $tmp_dir
 
-source_path=https://raw.githubusercontent.com/aws-samples/aws-parallelcluster-post-install-scripts/main/rest-api
+source_path=https://raw.githubusercontent.com/Gurgel100/aws-parallelcluster-post-install-scripts/main/rest-api
 files=(slurmrestd.service slurm_rest_api.rb nginx.conf)
 for file in "${files[@]}"
 do
